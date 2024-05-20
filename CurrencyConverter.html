@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+   
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #currency-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            text-align: left;
+        }
+        input, select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #6361ae;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #9298df;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #422188;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            background-color: #e8f5e9;
+            padding: 15px;
+            border: 1px solid #3e3cc0;
+            border-radius: 4px;
+        }
+     
+
+    </style>
+</head>
+<body  style="background: radial-gradient(circle, #ffffff, #a1c4fd); width: 100%; height: 100vh;">
+  
+   
+   
+  
+    <form id="currency-form" style= "background:#a3bde9" >
+        <h2>Currency Converter</h2>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" step="0.01" required><br><br>
+        <label for="from">From:</label>
+        <select id="from">
+            <option value="AUD">Australia (AUD)</option>
+            <option value="CAD">Canada (CAD)</option>
+            <option value="CNY">China (CNY)</option>
+            <option value="EUR">Eurozone (EUR)</option>
+            <option value="GBP">United Kingdom (GBP)</option>
+            <option value="INR">India (INR)</option>
+            <option value="JPY">Japan (JPY)</option>
+            <option value="KRW">South Korea (KRW)</option>
+            <option value="NZD">New Zealand (NZD)</option>
+            <option value="SEK">Sweden (SEK)</option>
+            <option value="CHF">Switzerland (CHF)</option>
+            <option value="USD">United States (USD)</option>
+        </select><br><br>
+        <label for="to">To:</label>
+        <select id="to">
+            <option value="AUD">Australia (AUD)</option>
+            <option value="CAD">Canada (CAD)</option>
+            <option value="CNY">China (CNY)</option>
+            <option value="EUR">Eurozone (EUR)</option>
+            <option value="GBP">United Kingdom (GBP)</option>
+            <option value="INR">India (INR)</option>
+            <option value="JPY">Japan (JPY)</option>
+            <option value="KRW">South Korea (KRW)</option>
+            <option value="NZD">New Zealand (NZD)</option>
+            <option value="SEK">Sweden (SEK)</option>
+            <option value="CHF">Switzerland (CHF)</option>
+            <option value="USD">United States (USD)</option>
+        </select><br><br>
+        <button style="background-color: rgb(81, 81, 236);" type="submit">Convert</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('currency-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let amount = parseFloat(document.getElementById('amount').value);
+            let fromCurrency = document.getElementById('from').value;
+            let toCurrency = document.getElementById('to').value;
+
+            fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
+            .then(response => response.json())
+            .then(data => {
+                let exchangeRate = data.rates[toCurrency];
+                let convertedAmount = (amount * exchangeRate).toFixed(2);
+                document.getElementById('result').innerHTML = `${amount} ${fromCurrency} is equal to ${convertedAmount} ${toCurrency}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
