@@ -1,0 +1,147 @@
+
+Purpose:
+To help users plan for retirement by calculating their future savings and income needs.
+To provide clear insights into whether they are on track to meet their retirement goals.
+
+
+
+Main Features:
+Calculate how much to retire.
+Determine how to save for retirement.
+Estimate how much can be withdrawn.
+Assess how long the money will last.
+
+
+
+User Inputs
+User Inputs for Accurate Calculations
+
+
+input feilds:
+Current Age: Starting point of the user's retirement plan.
+Planned Retirement Age: When the user plans to retire.
+Life Expectancy: Estimated lifespan to calculate the retirement period.
+Expected Social Security Income: Monthly social security benefits.
+Other Income After Retirement: Any additional income sources post-retirement.
+Average Investment Return: Expected annual return on investments.
+Inflation Rate: Expected annual inflation rate.
+Current Income: Annual income to assess current savings capacity.
+Income Needed After Retirement: Percentage of current income needed post-retirement.
+Current Retirement Savings: Amount already saved for retirement.
+Future Retirement Savings: Percentage of income to be saved in the future.
+
+
+Calculator Logic:
+
+Title: How the Calculator Works
+Content:
+Uses the formula FV=PV×(1+R)^n to estimate future value of savings.
+FV (Future Value): The amount of money expected to be available at retirement.
+PV (Present Value): Current savings.
+R (Rate of Return): Average investment return.
+n (Number of Years): Years until retirement.
+Incorporates inflation and income needs to project the retirement fund's sufficiency.
+
+What is Purchasing Power?
+Purchasing power refers to the amount of goods or services that one unit of currency can buy. It reflects the real value of money over time.
+Importance: the same amount of money will buy fewer goods and services in the future.
+
+Inflation's Impact on Purchasing Power
+Inflation: The general increase in prices and fall in the purchasing value of money.
+Example: If the inflation rate is 3% per year, something that costs $100 today will cost $103 next year.
+Relevance to Retirement: Inflation significantly impacts retirement savings, as it reduces the future value of saved money.
+
+
+Integrating Purchasing Power into WealthWard Calculator
+Inputs Related to Inflation:
+
+Inflation Rate: Users input an expected annual inflation rate.
+Average Investment Return: Users provide an expected return on their investments, which should ideally outpace inflation.
+
+
+
+Future Value of Current Savings
+Formula:
+FV=PV×(1+r)^n
+PV (Present Value): Current savings amount.
+r (Rate of Return): Expected annual investment return.
+n (Number of Years): Years until retirement.
+
+
+Future Contributions
+Formula:
+FV=PMT×((1+r)^r -1)/r
+PMT (Payment): Annual savings contribution.
+r (Rate of Return): Expected annual investment return.
+n (Number of Years): Years until retirement.
+
+Total Retirement Savings
+Total Savings=FV of Current Savings+FV of Future Contributions
+
+​
+
+Future Income Needs
+Steps:
+
+Calculate required income at retirement based on current income and desired replacement rate.
+Adjust for inflation over the retirement period.
+Formula for Required Income:
+Required Income=Current Income×Replacement Rate
+
+
+
+Formula for Adjusting for Inflation:
+
+Adjusted Income=Required Income×(1+Inflation Rate)^n
+
+
+Determine Replacement Rate:
+Replacement Rate=Desired Income as a Percentage of Current Income
+
+
+
+Purpose:
+To help users plan for retirement by calculating their future savings and income needs.
+To provide clear insights into whether they are on track to meet their retirement goals.
+
+
+
+Main Features:
+Calculate how much to retire.
+Determine how to save for retirement.
+Estimate how much can be withdrawn.
+Assess how long the money will last.
+
+
+
+User Inputs for Accurate Calculations
+
+
+
+Current Age
+Planned Retirement Age
+Life Expectancy
+Expected Social Security Income
+Other Income After Retirement
+Average Investment Return
+Inflation Rate
+Current Income
+Income Needed After Retirement
+Current Retirement Savings
+Future Retirement Savings
+
+
+Calculator Logics using javascript
+
+What is Purchasing Power?
+It reflects the real value of money over time.
+the same amount of money will buy fewer goods and services in the future.
+
+
+Inflation's Impact on Purchasing Power
+Inflation: The general increase in prices and fall in the purchasing value of money.
+Example: If the inflation rate is 3% per year, something that costs $100 today will cost $103 next year.
+Relevance to Retirement: Inflation significantly impacts retirement savings, as it reduces the future value of saved money.
+
+
+
